@@ -1,5 +1,5 @@
 {
-  "name": "stockvizui-plotly-ssr",
+  "name": "angular-with-plotly",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -7,10 +7,10 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "dev:ssr": "ng run stockvizui-plotly-ssr:serve-ssr",
-    "serve:ssr": "node dist/stockvizui-plotly-ssr/server/main.js",
-    "build:ssr": "ng build && ng run stockvizui-plotly-ssr:server",
-    "prerender": "ng run stockvizui-plotly-ssr:prerender"
+    "dev:ssr": "ng run angular-with-plotly:serve-ssr",
+    "serve:ssr": "node dist/angular-with-plotly/server/main.js",
+    "build:ssr": "ng build && ng run angular-with-plotly:server",
+    "prerender": "ng run angular-with-plotly:prerender"
   },
   "private": true,
   "dependencies": {
