@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'stockvizui-plotly-ssr'`, () => {
+  it(`should have as title 'angular-with-plotly'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('stockvizui-plotly-ssr');
+    expect(app.title).toEqual('angular-with-plotly');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('stockvizui-plotly-ssr app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('angular-with-plotly app is running!');
   });
 });

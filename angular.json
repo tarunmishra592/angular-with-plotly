@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "stockvizui-plotly-ssr": {
+    "angular-with-plotly": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -101,7 +101,7 @@
         "server": {
           "builder": "@angular-devkit/build-angular:server",
           "options": {
-            "outputPath": "dist/stockvizui-plotly-ssr/server",
+            "outputPath": "dist/angular-with-plotly/server",
             "main": "server.ts",
             "tsConfig": "tsconfig.server.json",
             "inlineStyleLanguage": "scss"
@@ -123,12 +123,12 @@
           "builder": "@nguniversal/builders:ssr-dev-server",
           "configurations": {
             "development": {
-              "browserTarget": "stockvizui-plotly-ssr:build:development",
-              "serverTarget": "stockvizui-plotly-ssr:server:development"
+              "browserTarget": "angular-with-plotly:build:development",
+              "serverTarget": "angular-with-plotly:server:development"
             },
             "production": {
-              "browserTarget": "stockvizui-plotly-ssr:build:production",
-              "serverTarget": "stockvizui-plotly-ssr:server:production"
+              "browserTarget": "angular-with-plotly:build:production",
+              "serverTarget": "angular-with-plotly:server:production"
             }
           },
           "defaultConfiguration": "development"
@@ -142,12 +142,12 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "stockvizui-plotly-ssr:build:production",
-              "serverTarget": "stockvizui-plotly-ssr:server:production"
+              "browserTarget": "angular-with-plotly:build:production",
+              "serverTarget": "angular-with-plotly:server:production"
             },
             "development": {
-              "browserTarget": "stockvizui-plotly-ssr:build:development",
-              "serverTarget": "stockvizui-plotly-ssr:server:development"
+              "browserTarget": "angular-with-plotly:build:development",
+              "serverTarget": "angular-with-plotly:server:development"
             }
           },
           "defaultConfiguration": "production"
