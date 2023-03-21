@@ -11,14 +11,14 @@ import { AppServerModule } from './src/main.server';
 // The Express app is exported so that it can be used by serverless Functions.
 export function app(): express.Express {
   const server = express();
-  const distFolder = join(process.cwd(), 'dist/stockvizui-plotly-ssr/browser');
+  const distFolder = join(process.cwd(), 'dist/angular-with-plotly/browser');
   const indexHtml = existsSync(join(distFolder, 'index.original.html')) ? 'index.original.html' : 'index';
 
 
   const domino = require('domino');
   const fs = require('fs');
   const path = require('path');
-  const template = fs.readFileSync('dist/stockvizui-plotly-ssr/browser/index.html').toString();
+  const template = fs.readFileSync('dist/angular-with-plotly/browser/index.html').toString();
   const win = domino.createWindow(template);
 
 
