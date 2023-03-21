@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/stockvizui-plotly-ssr",
+            "outputPath": "dist/stockvizui-plotly-ssr/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -32,7 +32,7 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": ["./node_modules/plotly.js/dist/plotly.min.js"]
           },
           "configurations": {
             "production": {
@@ -95,8 +95,62 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": ["./node_modules/plotly.js/dist/plotly.min.js"]
           }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/stockvizui-plotly-ssr/server",
+            "main": "server.ts",
+            "tsConfig": "tsconfig.server.json",
+            "inlineStyleLanguage": "scss"
+          },
+          "configurations": {
+            "production": {
+              "outputHashing": "media"
+            },
+            "development": {
+              "optimization": false,
+              "sourceMap": true,
+              "extractLicenses": false,
+              "vendorChunk": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve-ssr": {
+          "builder": "@nguniversal/builders:ssr-dev-server",
+          "configurations": {
+            "development": {
+              "browserTarget": "stockvizui-plotly-ssr:build:development",
+              "serverTarget": "stockvizui-plotly-ssr:server:development"
+            },
+            "production": {
+              "browserTarget": "stockvizui-plotly-ssr:build:production",
+              "serverTarget": "stockvizui-plotly-ssr:server:production"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "prerender": {
+          "builder": "@nguniversal/builders:prerender",
+          "options": {
+            "routes": [
+              "/"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "stockvizui-plotly-ssr:build:production",
+              "serverTarget": "stockvizui-plotly-ssr:server:production"
+            },
+            "development": {
+              "browserTarget": "stockvizui-plotly-ssr:build:development",
+              "serverTarget": "stockvizui-plotly-ssr:server:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }
