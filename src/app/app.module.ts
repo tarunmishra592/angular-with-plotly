@@ -7,18 +7,20 @@ import { AppComponent } from './app.component';
 import { CommonModule } from '@angular/common';
 import { PlotlyViaWindowModule } from 'angular-plotly.js';
 import { PlotlyUniversalModule } from './plotly-universal.module';
+import {PlotlyTestComponent} from "./plotly-test/plotly-test.component";
+import {ExcludeSsrDirective} from "./exclude-ssr.directive";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ExcludeSsrDirective
   ],
-  imports: [
-    CommonModule,
-    PlotlyUniversalModule,
-    BrowserModule.withServerTransition({ appId: 'serverApp' }),
-    AppRoutingModule,
-    PlotlyViaWindowModule
-  ],
+    imports: [
+        CommonModule,
+        BrowserModule.withServerTransition({appId: 'serverApp'}),
+        AppRoutingModule,
+        PlotlyTestComponent
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
